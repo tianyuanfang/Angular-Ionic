@@ -1,0 +1,21 @@
+<h1>正在进行 {{arrc2.length-num}}</h1>
+<ul>
+    <ng-container *ngFor="let item of arrc2;let i=index">
+        <li *ngIf="!item.done">
+            <input type="checkbox" (click)="change(i)">
+            <input type="text" [value]="item.title">
+            <button (click)="del(i)">删除</button>
+        </li>
+    </ng-container>
+</ul>
+
+<h1>已经完成 {{num}}</h1>
+<ul>
+    <ng-container *ngFor="let item of arrc2;let i=index">
+        <li *ngIf="item.done">
+            <input type="checkbox" checked="checked" (click)="change(i)">
+            <input type="text" [value]="item.title">
+            <button (click)="del(i)">删除</button>
+        </li>
+    </ng-container>
+</ul>

@@ -1,0 +1,9 @@
+<p> 这是父组件</p>
+<app-child [arr]="data">
+    <h3 class="header">first:start</h3>
+    <h3 class="footer">first:end</h3>
+</app-child>
+<app-child [arr]="data1" [arr1]="data" (delIndex)="del($event)">
+    <h3 class="header">second:start</h3>
+    <h3 class="footer">second:end</h3>
+</app-child>

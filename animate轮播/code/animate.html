@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script type="text/javascript" src="animate.js"></script>
+<script type="text/javascript">
+	var box=document.getElementById('box');
+	box.onclick=function(){
+		animate(box,{left:500,top:300,opacity:40},function(){
+			console.log(1);
+		});
+
+		// 匀速运动
+		// var timer=setInterval(function(){
+		// 	var now=parseInt(getStyle(box,'left'));
+		// 	console.log(now);			
+		// 	if(now==500){
+		// 		clearInterval(timer);
+		// 	}else{
+		// 		box.style.left=now+1+'px';
+		// 	}
+		// },30);
+		
+	    //变速运动
+		// var timer=setInterval(function(){
+		// 	var now=parseInt(getStyle(box,'left'));
+		// 	var speed=(0-now)/6;
+		// 	speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		// 	console.log(now);
+		// 	if(now==0  ){
+		// 		clearInterval(timer);
+		// 	}else{
+		// 		box.style.left=now+speed+'px';
+		// 	}
+		// },30);
+	}	
+</script>
+</html>

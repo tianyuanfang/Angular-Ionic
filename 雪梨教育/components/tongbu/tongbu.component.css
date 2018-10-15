@@ -1,0 +1,33 @@
+.container{
+	width: 1000px;
+    margin:5px;
+}
+.container li{
+    width: 230px;
+    height: 242px;
+    float: left;
+    margin-left: 13px;
+}
+#li{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+h3{
+    margin: 10px;
+    color: #333;
+}
+#span1,#span2{
+    display: block;
+    float: left;
+    margin: 10px;
+    color: #333;
+}
+#btn{
+    float: right;
+    background-color: #ff6e3d;
+    color: #fff;
+    border-color: #ff5b23;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}

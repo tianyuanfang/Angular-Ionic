@@ -1,0 +1,39 @@
+<ul id="ul">
+    <li *ngFor='let item of shequ'>
+        <a href="#">
+            <img src='{{item.avatar}}' id="avatar">
+            <div id="right">
+                <div id="div1">
+                    <img src="{{item.img}}" id="img">
+                </div>
+                <div id="div2">
+                    <h4><a href="#">{{item.title}}</a></h4>
+                    <p>{{item.txt}}</p>
+                </div>
+                <div id="word">
+                    <div id="word1">
+                        <span>{{item.name}}</span>
+                        <span>  ·   </span>
+                        <span>{{item.time}}</span>
+                    </div>
+                    <div id="word2">
+                        <span>阅读:{{item.read}}</span>
+                        <span>  |  </span>
+                        <span>评论:{{item.comment}}</span>
+                    </div>                    
+                </div>
+               <div id="hr"><hr></div>
+            </div>
+        </a>        
+    </li>
+</ul>
+<div id="topic">
+    <span>热门话题</span>
+    <hr>
+    <ul id="ul2">
+        <li *ngFor='let item of topic'>
+            <div id="lia"><a href="#">{{item.topic}}</a></div>
+            <div id="lis"><span>{{item.num}}</span></div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,92 @@
+#ul{
+    margin: 20px;
+}
+#avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: block;
+    margin: 10px;
+}
+#avatar,#right,#div1,#div2,#word,#hr,#ul,#topic{
+    float: left;
+}
+#img{
+    width: 130px;
+    height: 90px;
+}
+#right{
+    width: 650px;
+    margin: 10px;
+}
+#div2{
+    width: 500px;
+    margin: 10px;
+    margin-top: 0px;
+}
+h4 a{
+    color: #333;    
+}
+h4 a:hover{
+    color: #ff6e3d;
+}
+p{
+    color: #666;
+    height: 60px;
+    overflow: hidden;
+    margin: 7px;
+    font-size: 0.8em;
+}
+#word{
+    width:630px;
+    color: #9e9e9e;
+    font-size: 0.8em;
+}
+#word1{
+    float: left;
+}
+#word2{
+    float: right;
+}
+#hr hr{
+    width:630px;
+    margin-top: 5px;    
+    border: none;
+    border-top: 1px solid rgb(233, 233, 233);   
+}
+#topic{
+    width: 200px;
+    margin-top: 20px;
+}
+#topic span{
+    color: #333;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 3px;
+}
+#topic hr{
+    border: none;
+    border-top: 2px solid rgb(233, 233, 233);   
+}
+#lia{  
+    float: left;
+    width: 160px;
+    height: 20px;
+    overflow: hidden;
+    margin: 3px;
+}
+#lia a{
+    font-size: 0.8em;
+    color: #333;
+}
+#lia a:hover{
+    color: #ff6e3d;
+}
+#lis{    
+    float: right;
+    margin: 3px;
+}
+#ul2 span{
+    font-size: 0.8em;
+    color: #9e9e9e;
+}

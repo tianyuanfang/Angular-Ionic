@@ -1,0 +1,12 @@
+npm intall express --save
+           @types/express --save
+           typescript -g
+
+serve上：
+-node i nodemon -g
+-node server.js
+-nodemon server.js
+angular01上：
+-ng serve --open --proxy--config proxy.conf.json
+-npm run start(在package.json中start写入ng serve --proxy-config proxy.conf.json)
+浏览器上：localhost:8000/course

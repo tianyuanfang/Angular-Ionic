@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" l-model="name"><br>
+        <input type="text" l-model="age"><br>
+        <input type="text" l-model="msg"><br>
+         {{name}}<br>{{age}}<br>{{msg}}<br>
+        <h3>{{name}}</h3>
+        <h3>{{age}}</h3>
+        <h3>{{msg}}</h3>
+    </div>
+</body>
+
+<script>
+    function log(msg) {
+        console.log(msg);
+    }
+    var name='tom';
+    var age=10;
+    var msg='hello';
+    let obj={
+        // name:new ViewModel('nihao'),
+        // age:new ViewModel(20)
+    };
+    //{value:'name',nodelist:[input,{{}}]}
+    function ViewModel(data){//构造函数，实例化对象
+        this.value=data;
+        this.nodelist=[];
+    }
+    ViewModel.prototype.bindNode = function(node) {
+        this.nodelist.push(node);
+        //log(this.nodelist);
+    };
+    ViewModel.prototype.update = function() {
+        this.nodelist.forEach((node)=>{
+            if(node.nodeType==1){//元素节点
+                node.value=this.value;
+            }else{
+                let reg = /\{\{([^}]*)\}\}/g;
+                node.textContent=node.txt.replace(reg,function(){
+                    return obj[arguments[1]].value;
+                });
+            }
+        });
+    };
+    ViewModel.prototype.setValue=function(value){
+        this.value=value;
+        this.update();
+    }
+
+    function bind(e) {
+        let ele = document.querySelector(e);
+        let fragment = document.createDocumentFragment(); //文档碎片，存放节点
+        let child = null;
+        while (child = ele.firstChild) {
+            fragment.appendChild(ele.firstChild);
+        }
+        // Array.from().
+        function search(fragment){
+            [...fragment.childNodes].forEach(node => {
+                if (node.nodeType == 1) { //元素节点
+                    [...node.attributes].forEach(attr => {//遍历属性
+                        let {name,value} = attr;
+                        if (name.includes('l-model')) {
+                            //log(node);
+                            obj[value]=new ViewModel(window[value]);
+                            obj[value].bindNode(node);
+                            node.addEventListener('input',()=>{
+                                obj[value].setValue(node.value);
+                            },false);
+                        }
+                    });
+                    
+                    if(node.childNodes.length){//递归所有子节点
+                        search(node);
+                    }
+                }
+                let reg = /\{\{([^}]*)\}\}/g;
+                if (node.nodeType == 3 && reg.test(node.textContent)) { //文本节点
+                    //log(node);
+                    node.txt=node.textContent;
+                    node.textContent.replace(reg,function(){
+                        //log(arguments);
+                        obj[arguments[1]].bindNode(node);
+                    });
+                }
+            })
+        }
+
+        search(fragment);
+        Object.keys(obj).forEach((key)=>{
+            obj[key].update();
+        });
+        ele.appendChild(fragment); //页面回流
+    }
+    bind('#app');
+</script>
+
+</html>

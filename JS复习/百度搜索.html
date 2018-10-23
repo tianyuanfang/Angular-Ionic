@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度搜索</title>
+</head>
+
+<body>
+    <!-- 跨域方法: jsonp、cors、postMessage、webSocket -->
+    <input type="text" id="inp" autofocus="true">
+    <ul id="list"></ul>
+</body>
+
+<script>
+    // $.ajax({
+    //     url:'',
+    //     data:{},
+    //     success:function(msg){
+
+    //     }
+    // });
+    let inp = document.querySelector("#inp");
+    let ul = document.querySelector("#list");
+
+    inp.addEventListener('input', function() {
+        jsonp({
+            url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+            data: {
+                wd: this.value
+            },
+            cb: 'fn'
+        }).then(d => {
+            ul.innerHTML = '';
+            d.s.length && d.s.forEach(element => {
+                ul.innerHTML += `<li>${element}</li>`;
+            });
+        });
+    }, false);
+
+    function jsonp({
+        url,
+        data,
+        cb
+    }) {
+        return new Promise((resolve, reject) => {
+            let script = document.createElement('script');
+            let arr = [];
+            window[cb] = d => {
+                resolve(d);
+                document.body.removeChild(script);
+            }
+            data = {...data,
+                cb
+            }; //wd=a,json=1,cb=fn           
+            Object.keys(data).forEach(key => {
+                arr.push(`${key}=${data[key]}`);
+            });
+            script.src = `${url}?${arr.join('&')}`;
+            document.body.appendChild(script);
+        });
+    }
+</script>
+
+<!-- <script src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&cb=fn"></script> -->
+
+</html>

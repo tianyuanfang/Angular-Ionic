@@ -1,0 +1,15 @@
+page-about {
+    .sli{
+        height: 200px;
+        border:1px solid red;
+    }
+    ion-scroll{
+        height: 50px;
+        white-space: nowrap;//禁止折行
+        span{
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+        }
+    }
+}

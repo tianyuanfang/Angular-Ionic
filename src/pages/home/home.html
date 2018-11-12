@@ -1,0 +1,155 @@
+<ion-header no-border text-center>
+  <ion-navbar color="yel">
+    <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>桔家</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- 导航 -->
+  <ul class="navList">
+    <li name="nav" (click)="val('commend')" [ngClass]="{'first':flag.commend}">推荐</li>
+    <li name="nav" (click)="val('live')" [ngClass]="{'first':flag.live}">家居</li>
+    <li name="nav" (click)="val('kitchen')" [ngClass]="{'first':flag.kitchen}">餐具</li>
+    <li name="nav" (click)="val('bed')" [ngClass]="{'first':flag.bed}">床上用品</li>
+  </ul>
+  <div [ngSwitch]="nav">
+    <div *ngSwitchCase="'commend'">
+      <hcommend #hcommend></hcommend>
+    </div>
+    <div *ngSwitchCase="'live'">
+      <hlive #hlive></hlive>
+    </div>
+    <div *ngSwitchCase="'kitchen'">
+      餐具
+    </div>
+    <div *ngSwitchCase="'bed'">
+      床上用品
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- css工具集--theme下
+  sass变量（全局）--variable.scss
+  slides组件、属性、方法及事件
+  @ViewChild()
+  创建组件：ionic g component ''
+  模板引用变量 标签上写#变量名
+  segment组件及ngSwitch
+  服务器代理ionic.config.json -->
+
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-segment [(ngModel)]="icons" color="secondary">
+    <ion-segment-button value="camera">
+      <ion-icon name="camera"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="bookmark">
+      <ion-icon name="bookmark"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list [ngSwitch]="icons">
+    <ion-item *ngSwitchCase="icons">这是{{icons}}</ion-item>
+  </ion-list>
+ 
+  <button ion-button icon-left>
+    <ion-icon name="home"></ion-icon>
+    Left Icon
+  </button>
+
+  <button ion-button icon-right>
+    Right Icon
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <button ion-button icon-only>
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <a1 #a1></a1>加载组件a1
+  <input type="text" #inp>
+  <button ion-button block menuToggle>开关菜单</button>
+
+  <button (click)="goSub()" ion-button block>注册</button>
+  ion-button：蓝色按钮；block：块 
+  <button ion-item (click)="goSub()" detail-none>
+    Button Item
+  </button>
+
+  <button ion-button round full>
+    <ion-icon name="star" icon-only></ion-icon>
+    star
+  </button>
+
+  <ion-textarea>行内</ion-textarea>
+  <a ion-item href="https://www.ionicframework.com">
+    Anchor Item
+  </a>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Inline Label</ion-label>
+      <ion-input placeholder="Text Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" fixed>Fixed Label</ion-label>
+      <ion-input type="tel" placeholder="Tel Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Number Input with no label"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Stacked Label</ion-label>
+      <ion-input type="email" placeholder="Email Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Stacked Label</ion-label>
+      <ion-input type="password" placeholder="Password Input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Floating Label</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Clear Input" clearInput></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Enter a description"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{item}}
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

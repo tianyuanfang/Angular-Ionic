@@ -1,0 +1,58 @@
+<!--
+  Generated template for the MyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content>
+  <div class="my">
+    <img src="../assets/imgs/avatar.png">
+    <p>土方桔桔桔</p>
+  </div>
+  <div class="order">
+    <p class="p1">我的订单</p>
+    <p class="p2">查看全部订单 ></p>
+  </div>
+  <div class="lis">
+    <ul class="li1">
+      <li class="first" [ngClass]="{'first':flag.release}" (click)="change('release')">
+        <img src="../assets/imgs/release.png">
+        <span>我的发布</span>
+      </li>
+      <li class="mar" [ngClass]="{'first':flag.star}"  (click)="change('star')">
+        <img src="../assets/imgs/star.png">
+        <span>我的收藏</span>
+      </li>
+      <li [ngClass]="{'first':flag.eye}"  (click)="change('eye')">
+        <img src="../assets/imgs/eye.png">
+        <span>我的关注</span>
+      </li>
+    </ul>
+    <ul class="li2">
+      <li>
+        <img src="../assets/imgs/cart.png">
+        <span>购物车</span>
+      </li>
+      <li>
+        <img src="../assets/imgs/position.png">
+        <span>收货地址</span>
+      </li>
+      <li>
+        <img src="../assets/imgs/money.png">
+        <span>优惠券</span>
+      </li>
+      <li>
+        <img src="../assets/imgs/ear.png">
+        <span>在线客服</span>
+      </li>
+      <li>
+        <img src="../assets/imgs/message.png">
+        <span>我的消息</span>
+      </li>
+      <li>
+        <img src="../assets/imgs/set.png">
+        <span>设置</span>
+      </li>
+    </ul>
+  </div>
+</ion-content>

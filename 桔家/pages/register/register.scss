@@ -1,0 +1,19 @@
+page-register {
+    ion-content{
+        background: url(../assets/imgs/bg.png);
+        background-size: cover;
+        .box{
+            ion-item{
+                background: transparent;
+            }
+            button{
+                color: #fff;
+                margin-top: 50px;
+            }
+            p{
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+}

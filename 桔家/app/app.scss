@@ -30,9 +30,11 @@ a{
 .ion-ios-add-circle:before,.ion-ios-add-circle-outline:before{
     font-size: 45px;
     margin-top:-5px;
+    color: #ffdb2c;
 }
-.ion-md-add-circle:before{
+.ion-md-add-circle:before,.ion-ios-add-circle-outline:before{
     font-size:45px;
+    color: #ffdb2c;
 }
 .swiper-pagination-bullet-active {
     background: #ffdb2c;
